@@ -33,7 +33,6 @@ function ZoozPaymentCtrl($scope, $window, $http) {
     };
 
     $window.startZooz = function(params) {
-        console.log(params)
         var zoozParams = {
             preferredLanguage: params.preferredLanguage,
             token: params.token,
