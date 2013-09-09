@@ -32,7 +32,7 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('unique_id')->isRequired()->cannotBeEmpty()->end()
                             ->scalarNode('app_key')->isRequired()->cannotBeEmpty()->end()
                             ->scalarNode('response_type')->defaultValue('NVP')->cannotBeEmpty()->end()
-                            ->booleanNode('sandbox_mode')->defaultValue(false)->cannotBeEmpty()->end()
+                            ->booleanNode('sandbox_mode')->isRequired()->defaultValue(true)->end()
                         ->end()
                     ->end()
                     ->booleanNode('ajax_mode')->defaultValue(true)->end()
