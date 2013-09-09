@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="undf_zooz_payment.handler.open_transaction.class">Undf\ZoozPaymentBundle\OpenTransactionHandler</parameter>
+        <parameter key="undf_zooz_payment.server.class">Undf\ZoozPaymentBundle\Server</parameter>
+    </parameters>
+
+    <services>
+        <service id="undf_zooz_payment.handler.open_transaction" class="%undf_zooz_payment.handler.open_transaction.class%">
+            <argument/>
+            <argument type="service" id="undf_zooz_payment.server" />
+            <argument type="service" id="router" />
+            <argument>%undf_zooz_payment.unique_id%</argument>
+            <argument>%undf_zooz_payment.sandbox_mode%</argument>
+            <argument>%undf_zooz_payment.ajax_mode%</argument>
+            <argument>%locale%</argument>
+        </service>
+
+        <service id="undf_zooz_payment.server" class="%undf_zooz_payment.server.class%">
+            <argument>%undf_zooz_payment.unique_id%</argument>
+            <argument>%undf_zooz_payment.app_key%</argument>
+            <argument>%undf_zooz_payment.response_type%</argument>
+        </service>
+    </services>
+</container>

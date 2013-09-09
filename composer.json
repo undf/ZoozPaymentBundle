@@ -1,0 +1,21 @@
+{
+    "name": "undf/zooz-payment-bundle",
+    "description": "Integration of the Zooz payment platform in your Symfony2&AngularJS project",
+    "keywords": [],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dani Gonzalez",
+            "email": "daniel.gonzalez@undefined.es"
+        }
+    ],
+    "require": {
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "doctrine/doctrine-bundle": "1.2.*",
+    },
+    "autoload": {
+        "psr-0": { "Undf\\ZoozPaymentBundle": "" }
+    },
+    "target-dir": "Undf/ZoozPaymentBundle"
+}

@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <div class="panel">
+            <div class="panel-body">
+                <h1 class="text-center well-lg"><strong>PayVip</strong></h1>
+                <h4 class="text-center text-success well-lg">¡Compra realizada con éxito!</h4>
+                <p class="text-center well-sm">En breve recibirás una notificación informando que ya tienes disponible tu bebida.</p>
+                <a class="btn btn-primary btn-lg btn-block focusable"
+                   data-testabit="modal"
+                   data-testabit-modal-title="{{ 'add_favourite.modal.title' | trans({} , 'testabit' ) }}"
+                   data-testabit-modal-message="{{ 'add_favourite.modal.text' | trans({} , 'testabit' ) }}"
+                   data-testabit-category="Purchases"
+                   data-testabit-action="add_to_favourites"
+                   data-testabit-label="{{ 'add_favourite.label' | trans({} , 'testabit' ) }}"
+                   data-testabit-value="">
+                    Añadir a mis favoritos
+                </a>
+                <a class="btn btn-default btn-lg btn-block" href="/#/drinks/name"
+                   data-testabit="silent"
+                   data-testabit-category="Purchases"
+                   data-testabit-action="new_purchase"
+                   data-testabit-label="{{ 'new_purchase.label' | trans({} , 'testabit' ) }}"
+                   data-testabit-value="">
+                    Realizar otro pedido
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
+
