@@ -35,14 +35,14 @@ abstract class BasePayment implements PaymentInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="transactionToken", type="string", length=255, nullable=true)
+     * @ORM\Column(name="transactionToken", type="text", nullable=true)
      */
     protected $transactionToken;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="transactionId", type="string", length=255, nullable=true)
+     * @ORM\Column(name="transactionId", type="text", nullable=true)
      */
     protected $transactionId;
 
