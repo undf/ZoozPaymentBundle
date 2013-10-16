@@ -3,7 +3,7 @@ function ZoozPaymentCtrl($scope, $window, $http) {
 
     $window.handleZoozResponse = function(response) {
         var data = angular.fromJson(response);
-
+        console.log(data)
         if (data.statusCode === 0) {
             var url = $scope.successCallbackUrl +
                     '?sessionToken=' + data.sessionToken +
@@ -40,7 +40,8 @@ function ZoozPaymentCtrl($scope, $window, $http) {
             completeCallBackFunc: $window.handleZoozResponse,
             isSandbox: params.isSandbox,
             returnUrl: params.returnUrl,
-            cancelUrl: params.cancelUrl
+            cancelUrl: params.cancelUrl,
+            rememberMeDefault: true
         };
 
         $scope.successCallbackUrl = params.returnUrl;
