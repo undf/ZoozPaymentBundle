@@ -35,16 +35,26 @@ undf_zooz_payment:
     unique_id: <your Zooz application unique id>
     app_key: <your Zoop application app key>
     sandbox_mode: true #Enable/disable the Zooz server sandbox mode
-    
+
   ajax_mode: true #If true, Zooz server transaction response will be handled from client side
-  
+
   payment:
     entity: YourBundle:Payment #Your payment entity class
     manager: your.manager.service.id #Service id of your payment manager class
-    
+
   templates: #These templates are only used in non-ajax mode
     return: UndfZoozPaymentBundle:Transaction:return.html.twig #Succeed payment template
     cancel: UndfZoozPaymentBundle:Transaction:cancel.html.twig #Failed payment template
+```
+
+```yml
+# app/routing.yml
+
+undf_zooz_payment:
+    resource: "@UndfZoozPaymentBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 ```
 
 #Use
@@ -119,10 +129,10 @@ use Undf\ZoozPaymentBundle\Model\PaymentInterface;
 class PaymentManager implements PaymentManagerInterface
 {
     protected $em;
-    
+
     public function __construct(RegistryInterface $doctrine)
     {
-      $this->em = $doctrine->getManagerForClass('YourBundle:Payment');    
+      $this->em = $doctrine->getManagerForClass('YourBundle:Payment');
     }
 
     public function update(PaymentInterface $payment)
@@ -168,7 +178,7 @@ class YourTransactionController extends Controller
     {
       //Validate, manage or do whatever you want to do with the transaction request
       ...
-      
+
       //Just make sure you return this:
       $transactionHandler = $this->get('undf_zooz_payment.handler.open_transaction');
       $transactionHandler->setLanguage($this->getRequest()->getLocale());
