@@ -180,7 +180,7 @@ class Server
         );
         foreach ($mandatoryParams as $mandatoryParam) {
             if (!$mappedParams[$mandatoryParam]) {
-                throw new \Exception(sprintf('Missed mandatory param "%s" for the Zooz payment'));
+                throw new \Exception(sprintf('Missed mandatory param "%s" for the Zooz payment', $mandatoryParam));
             }
         }
     }

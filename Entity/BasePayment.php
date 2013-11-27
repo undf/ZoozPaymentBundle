@@ -154,7 +154,10 @@ abstract class BasePayment implements PaymentInterface
      */
     public function getUserId()
     {
-        return $this->user->getId();
+        if($this->user) {
+            return $this->user->getId();
+        }
+        return null;
     }
 
     /**
@@ -162,7 +165,10 @@ abstract class BasePayment implements PaymentInterface
      */
     public function getUserEmail()
     {
-        return $this->user->getEmail();
+        if($this->user) {
+            return $this->user->getEmail();
+        }
+        return null;
     }
 
     /**
@@ -170,7 +176,10 @@ abstract class BasePayment implements PaymentInterface
      */
     public function getUserFirstname()
     {
-        return $this->user->getFirstname();
+        if($this->user) {
+            return $this->user->getFirstname();
+        }
+        return null;
     }
 
     /**
@@ -178,7 +187,10 @@ abstract class BasePayment implements PaymentInterface
      */
     public function getUserLastname()
     {
-        return $this->user->getLastname();
+        if($this->user) {
+            return $this->user->getLastname();
+        }
+        return null;
     }
 
     public function getInvoiceItemCollection()
