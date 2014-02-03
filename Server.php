@@ -70,7 +70,6 @@ class Server
         $postFields .= '&transactionID=' . $transactionId;
 
         $response = $this->sendRequest($postFields);
-
         //Parse result string to get the variables from the response:
         //$statusCode, $paymentStatus and $errorMessage
         parse_str($response);

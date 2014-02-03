@@ -51,7 +51,7 @@ abstract class BasePayment implements PaymentInterface
      *
      * @ORM\Column(name="transactionStatus", type="string", length=20, nullable=true)
      */
-    private $transactionStatus;
+    protected $transactionStatus;
 
     /**
      * @return float
@@ -146,7 +146,7 @@ abstract class BasePayment implements PaymentInterface
      */
     public function setTransactionStatus($transactionStatus)
     {
-        $this->transactionStatus = $transactionStatus;
+        $this->transactionStatus = trim($transactionStatus);
     }
 
     /**
